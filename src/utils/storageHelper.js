@@ -13,7 +13,7 @@ export const getUser = () => {
 }
 
 export const saveUser = (user) => {
-  console.log('saveUser');
+  console.log('saveUser', { user });
   setStorage(USER_KEY, user)
 }
 
@@ -27,7 +27,7 @@ export const getPokemons = () => {
 }
 
 export const savePokemons = (pokemons) => {
-  console.log('savePokemons');
+  console.log('savePokemons', { pokemons });
   setStorage(POKEMONS_KEY, pokemons)
 }
 

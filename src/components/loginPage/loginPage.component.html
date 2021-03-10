@@ -1,9 +1,29 @@
-<h3>{{title}}</h3>
-<h4>Todo</h4>
-<ul>
-  <li>Add form</li>
-  <li>Add input</li>
-  <li>Add button</li>
-  <li>Handle event</li>
-  <li>save user to storage</li>
-</ul>
+<form [formGroup]="loginForm">
+  <label for="trainer-name">
+    Enter name:
+  </label>
+  <input
+    id="trainer-name"
+    name="trainer-name"
+    formControlName="trainerName"
+    type="text"
+    placeholder="trainer name"
+    required
+    minlength="2"
+  />
+  <div *ngIf="trainerName.invalid && (trainerName.dirty || trainerName.touched)">
+    <p *ngIf="trainerName.errors.required">
+      Name is required
+    </p>
+    <p *ngIf="trainerName.errors.minlength">
+      Min length 2
+    </p>
+  </div>
+  <button
+    [disabled]="loginForm.invalid || loading"
+    type="button"
+    (click)="onClick()"
+  >
+    continue!
+  </button>
+</form>
