@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPage } from '../components/loginPage/loginPage.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
 /*
 TODO
 TrainerPage
@@ -21,7 +22,8 @@ Pokemon
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPage
+    LoginPage,
+    TrainerPage
   ],
   imports: [
     BrowserModule,

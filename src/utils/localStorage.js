@@ -5,7 +5,7 @@ export const setStorage = (key, value) => {
   localStorage.setItem(`${KEY_VALUE}:${key}`, encrypted);
 }
 
-export const getStorage = () => {
+export const getStorage = (key) => {
   const storedValue = localStorage.getItem(`${KEY_VALUE}:${key}`);
   if (!storedValue) return false;
   return JSON.parse(atob(storedValue));

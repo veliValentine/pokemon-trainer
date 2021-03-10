@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { AbstractControl, FormControl, FormGroup, Validators } from "@angular/forms";
-import { saveUser } from '../../utils/storageHelper'
+import { saveTrainer } from '../../utils/storageHelper'
 
 @Component({
   selector: 'loginPage',
@@ -26,7 +26,7 @@ export class LoginPage {
     this.loading = true;
     const userName: string = this.loginForm.value
     console.log('click!', userName);
-    saveUser(userName)
+    saveTrainer(userName)
     setTimeout(() => {
       console.log('ADD REDIRECT');
       this.loading = false;

@@ -1,29 +1,29 @@
 import { getStorage, setStorage } from "./localStorage"
 
-const USER_KEY = 'user';
+const TRAINER_KEY = 'user';
 const POKEMONS_KEY = 'collected'
 
-export const getUser = () => {
-  console.log('getUser');
-  const user = getStorage(USER_KEY);
-  if (user) {
-    return user;
+export const getTrainer = () => {
+  const trainer = getStorage(TRAINER_KEY);
+  console.log('getTrainer', { trainer });
+  if (trainer) {
+    return trainer.trainerName;
   }
   return null;
 }
 
-export const saveUser = (user) => {
-  console.log('saveUser', { user });
-  setStorage(USER_KEY, user)
+export const saveTrainer = (trainer) => {
+  console.log('saveTrainer', { trainer });
+  setStorage(TRAINER_KEY, trainer)
 }
 
 export const getPokemons = () => {
-  console.log('getPokemons');
   const pokemons = getStorage(POKEMONS_KEY);
+  console.log('getPokemons', { pokemons });
   if (pokemons) {
     return pokemons;
   }
-  return null;
+  return [];
 }
 
 export const savePokemons = (pokemons) => {
