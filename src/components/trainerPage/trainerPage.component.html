@@ -1,0 +1,18 @@
+<h2>Hello {{trainer}}!</h2>
+
+<div *ngIf="haveCollectedPokemons;else noCollectedPokemons">
+  <div class="card-container">
+    <section *ngFor="let pokemon of collectedPokemons">
+      <a class="card" href="./pokemon/{{pokemon.id}}">
+        <img src="{{pokemon.src}}" alt="image-{{pokemon.name}}" />
+        <p>{{pokemon.name}}</p>
+      </a>
+    </section>
+  </div>
+</div>
+
+<ng-template #noCollectedPokemons>
+  <div>
+    <p>No collected pokemons. Go and get them all!</p>
+  </div>
+</ng-template>
