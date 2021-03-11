@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { PokemonCollected } from '../../utils/interface'
+import { PokemonBase } from '../../utils/interface'
 import { getPokemons, getTrainer } from '../../utils/storageHelper.js'
 
 @Component({
@@ -10,7 +10,7 @@ import { getPokemons, getTrainer } from '../../utils/storageHelper.js'
 // TODO redirect to pokemon page on click
 export class TrainerPage {
   trainer: string = getTrainer();
-  collectedPokemons: Array<PokemonCollected> = getPokemons();
+  collectedPokemons: Array<PokemonBase> = getPokemons();
   haveCollectedPokemons: boolean = this.collectedPokemons && this.collectedPokemons.length > 0;
 }
 
