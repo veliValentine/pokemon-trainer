@@ -1,5 +1,3 @@
 <h2>Catalog</h2>
 length: {{pokemons.length}}
-<section *ngFor="let pokemon of pokemons">
-  <pokemonCard [pokemon]="pokemon"></pokemonCard>
-</section>
+<cardContainer [pokemons]="pokemons"></cardContainer>

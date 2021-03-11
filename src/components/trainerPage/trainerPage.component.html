@@ -1,11 +1,7 @@
 <h2>Hello {{trainer}}!</h2>
 
 <div *ngIf="haveCollectedPokemons;else noCollectedPokemons">
-  <div class="card-container">
-    <section *ngFor="let pokemon of collectedPokemons">
-      <pokemonCard [pokemon]="pokemon"></pokemonCard>
-    </section>
-  </div>
+  <cardContainer [pokemons]="collectedPokemons"></cardContainer>
 </div>
 
 <ng-template #noCollectedPokemons>

@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
 import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
 import { PokemonCard } from 'src/components/pokemonCard/pokemonCard.component';
+import { CardContainer } from 'src/components/cardContainer/cardContainer.component';
 /*
 TODO
 Pokemon catalog
@@ -26,6 +27,7 @@ Pokemon
     LoginPage,
     TrainerPage,
     CatalogPage,
+    CardContainer,
     PokemonCard
   ],
   imports: [
