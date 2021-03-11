@@ -1,5 +1,8 @@
-export interface PokemonCollected {
+export interface PokemonBase {
   id: number,
   name: string,
-  src: string,
+}
+
+export interface Pokemon {
+  
 }
