@@ -13,8 +13,6 @@ import { CardContainer } from 'src/components/cardContainer/cardContainer.compon
 /*
 TODO
 Pokemon catalog
-- Dummy data
-- List each card
 - Linking (console.log pokemon ID)
 - Pagination ?
 Pokemon
