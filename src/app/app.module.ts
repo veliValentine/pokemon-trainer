@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPage } from '../components/loginPage/loginPage.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
+import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
 /*
 TODO
-TrainerPage
-- Dummy data
-Pokemons
+Pokemon catalog
 - Dummy data
 - List each card
 - Linking (console.log pokemon ID)
@@ -23,12 +23,14 @@ Pokemon
   declarations: [
     AppComponent,
     LoginPage,
-    TrainerPage
+    TrainerPage,
+    CatalogPage
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
