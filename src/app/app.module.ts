@@ -8,6 +8,7 @@ import { LoginPage } from '../components/loginPage/loginPage.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
 import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
+import { PokemonCard } from 'src/components/pokemonCard/pokemonCard.component';
 /*
 TODO
 Pokemon catalog
@@ -24,7 +25,8 @@ Pokemon
     AppComponent,
     LoginPage,
     TrainerPage,
-    CatalogPage
+    CatalogPage,
+    PokemonCard
   ],
   imports: [
     BrowserModule,

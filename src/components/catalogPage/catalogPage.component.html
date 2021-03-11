@@ -1,5 +1,5 @@
 <h2>Catalog</h2>
 length: {{pokemons.length}}
 <section *ngFor="let pokemon of pokemons">
-  {{pokemon.name}}
+  <pokemonCard [pokemon]="pokemon"></pokemonCard>
 </section>

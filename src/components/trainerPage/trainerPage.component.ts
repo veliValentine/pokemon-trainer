@@ -10,7 +10,7 @@ import { getPokemons, getTrainer } from '../../utils/storageHelper.js'
 // TODO redirect to pokemon page on click
 export class TrainerPage {
   trainer: string = getTrainer();
-  collectedPokemons: Array<PokemonBase> = getPokemons();
+  collectedPokemons: PokemonBase[] = getPokemons();
   haveCollectedPokemons: boolean = this.collectedPokemons && this.collectedPokemons.length > 0;
 }
 
