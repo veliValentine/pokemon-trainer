@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { POKEMONS_API_URL } from "./serviceHelper";
-import { PokemonBase } from "../utils/interface";
+import { parsePokemon, POKEMONS_API_URL, POKEMON_API_URL } from "./serviceHelper";
+import { PokemonBase, Pokemon, Stat, ResponseStatType } from "../utils/interface";
 import { map } from 'rxjs/operators'
 
 @Injectable({
@@ -23,13 +23,23 @@ export class PokemonService {
     }
   )
 
+  private parsePokemonBase = (response: any): PokemonBase[] => (
+    response.results.map(this.convertToPokemonBase)
+  )
+
   getPokemons(): Observable<PokemonBase[]> {
     return this.http
       .get<PokemonBase[]>(POKEMONS_API_URL)
       .pipe(
-        map((response: any) => (
-          response.results.map(this.convertToPokemonBase)
-        ))
+        map(this.parsePokemonBase)
+      )
+  }
+
+  getPokemon(id: number): Observable<Pokemon> {
+    return this.http
+      .get<Pokemon>(POKEMON_API_URL(id))
+      .pipe(
+        map(parsePokemon)
       )
   }
 }
