@@ -1,4 +1,5 @@
 import { Pokemon, PokemonBase, ResponseStatType, Stat } from "src/utils/interface"
+import { title } from "src/utils/title";
 
 export const parsePokemonBase = (response: any): PokemonBase[] => (
   response.results.map(convertToPokemonBase)
@@ -6,7 +7,7 @@ export const parsePokemonBase = (response: any): PokemonBase[] => (
 
 const convertToPokemonBase = ({ name, url }: { name: string, url: string }): PokemonBase => (
   {
-    name,
+    name: title(name),
     id: getIdFromURL(url),
   }
 )
@@ -18,7 +19,7 @@ const getIdFromURL = (url: string): number => (
 export const parsePokemon = (response: any): Pokemon => (
   {
     id: response.id,
-    name: response.name,
+    name: title(response.name),
     baseExperience: response.base_experience,
     height: response.height,
     weight: response.weight,
