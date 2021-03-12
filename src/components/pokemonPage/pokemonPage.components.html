@@ -1,0 +1,64 @@
+<p *ngIf="loading;else loaded">loading...</p>
+<ng-template #loaded>
+  <div class="container">
+    <h1>Pokemon page</h1>
+
+    <div class="stats">
+      <div class="name-image-catch">
+        <h3>{{pokemon.name}}</h3>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png"
+          alt="{{pokemon.name}}_image">
+        <button>catch</button>
+      </div>
+
+      <div class="base-stats">
+        <h4>Stats</h4>
+        <div>
+          <section *ngFor="let stat of pokemon.stats">
+            <p>{{stat.name}}: {{stat.baseStat}}</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="types">
+        <h4>Type</h4>
+        <ul>
+          <section *ngFor="let type of pokemon.types">
+            <li>{{type}}</li>
+          </section>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats">
+
+      <div>
+        <h4>Profile</h4>
+        <ul>
+          <li>Height: {{pokemon.height}}</li>
+          <li>Weight: {{pokemon.weight}}</li>
+          <li>Base xp: {{pokemon.baseExperience}}</li>
+        </ul>
+      </div>
+      <div class="abilities">
+        <h4>Abilities</h4>
+        <ul>
+          <section *ngFor="let ability of pokemon.abilities">
+            <li>{{ability}}</li>
+          </section>
+        </ul>
+      </div>
+    </div>
+
+    <div class="moves">
+      <h3>Moves</h3>
+      <div>
+        <ul>
+          <section *ngFor="let move of pokemon.moves">
+            <li>{{move}}</li>
+          </section>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-template>
