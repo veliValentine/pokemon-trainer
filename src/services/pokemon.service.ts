@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { POKEMON_API_URL } from "./serviceHelper";
+import { POKEMONS_API_URL } from "./serviceHelper";
 import { PokemonBase } from "../utils/interface";
 import { map } from 'rxjs/operators'
 
@@ -25,12 +25,11 @@ export class PokemonService {
 
   getPokemons(): Observable<PokemonBase[]> {
     return this.http
-      .get<PokemonBase[]>(POKEMON_API_URL)
+      .get<PokemonBase[]>(POKEMONS_API_URL)
       .pipe(
-        map((response: any) => {
-          const results: any[] = response.results;
-          return results.map(this.convertToPokemonBase)
-        })
+        map((response: any) => (
+          response.results.map(this.convertToPokemonBase)
+        ))
       )
   }
 }

@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { PokemonService } from "src/services/pokemon.service";
-import { PokemonBase } from "../../utils/interface";
 
 @Component({
   selector: 'catalogPage',
@@ -16,6 +15,4 @@ export class CatalogPage {
         this.pokemons = response
       })
   }
-
-  // pokemons: PokemonBase[] = this.pokemonService.getPokemons();
 }

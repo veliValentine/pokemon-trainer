@@ -13,7 +13,6 @@ import { CardContainer } from 'src/components/cardContainer/cardContainer.compon
 /*
 TODO
 Pokemon catalog
-- Linking (console.log pokemon ID)
 - Pagination ?
 Pokemon
 - info

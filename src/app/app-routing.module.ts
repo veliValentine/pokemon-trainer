@@ -14,7 +14,7 @@ const routes: Routes = [
     component: TrainerPage
   },
   {
-    path: 'catalog',
+    path: 'pokemons',
     component: CatalogPage
   },
 ];
