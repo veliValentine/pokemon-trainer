@@ -7,7 +7,6 @@ import { parsePokemon, parsePokemonBase } from "src/utils/parseResponses";
 import { PokemonBase, Pokemon, } from "../utils/interface";
 import { POKEMONS_API_URL, POKEMON_API_URL } from "./serviceHelper";
 
-
 @Injectable({
   providedIn: 'root'
 })
