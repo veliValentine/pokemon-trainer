@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
 import { LoginPage } from 'src/components/loginPage/loginPage.component';
+import { PokemonPage } from 'src/components/pokemonPage/pokemonPage.components';
 import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: 'pokemons',
     component: CatalogPage
   },
+  {
+    path: 'pokemon/:id',
+    component: PokemonPage
+  }
 ];
 
 @NgModule({
