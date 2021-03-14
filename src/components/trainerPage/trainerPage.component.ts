@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
+import { StorageService } from "src/services/storage.service";
 import { PokemonBase } from '../../utils/interface'
-import { getPokemons, getTrainer } from '../../utils/storageHelper.js'
 
 @Component({
   selector: 'trainerPage',
@@ -9,9 +9,13 @@ import { getPokemons, getTrainer } from '../../utils/storageHelper.js'
 })
 // TODO redirect to pokemon page on click
 export class TrainerPage {
-  trainer: string = getTrainer();
-  collectedPokemons: PokemonBase[] = getPokemons();
-  haveCollectedPokemons: boolean = this.collectedPokemons && this.collectedPokemons.length > 0;
+  constructor(private readonly storageService: StorageService) {
+  }
+
+  trainer: string = this.storageService.getTrainer();
+  collectedPokemons: PokemonBase[] = this.storageService.getPokemons();
+
+  haveCollectedPokemons: boolean = this.collectedPokemons.length > 0;
 }
 
 

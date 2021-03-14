@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { AbstractControl, FormControl, FormGroup, Validators } from "@angular/forms";
-import { saveTrainer } from '../../utils/storageHelper'
+import { StorageService } from "src/services/storage.service";
 
 @Component({
   selector: 'loginPage',
@@ -8,25 +8,23 @@ import { saveTrainer } from '../../utils/storageHelper'
 })
 
 export class LoginPage {
-
+  constructor(private readonly storageService: StorageService) {
+  }
   loading: boolean = false;
-
   loginForm: FormGroup = new FormGroup({
     trainerName: new FormControl('', [
       Validators.required,
       Validators.minLength(2)
     ])
   })
-
-  get trainerName() : AbstractControl {
+  get trainerName(): AbstractControl {
     return this.loginForm.get('trainerName')
   }
-
   onClick() {
     this.loading = true;
-    const userName: string = this.loginForm.value
+    const userName: string = this.loginForm.value.trainerName
     console.log('click!', userName);
-    saveTrainer(userName)
+    this.storageService.saveTrainer(userName);
     setTimeout(() => {
       console.log('ADD REDIRECT');
       this.loading = false;
