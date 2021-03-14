@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { PokemonBase } from "src/utils/interface.js";
-import { getStorage, setStorage } from '../utils/localStorage.js';
+import { getStorage, setStorage } from '../utils/localStorage';
 import { POKEMONS_KEY, TRAINER_KEY } from "./serviceHelper";
 
 @Injectable({
