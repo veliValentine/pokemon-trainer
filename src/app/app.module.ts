@@ -12,6 +12,7 @@ import { PokemonCard } from 'src/components/pokemonCard/pokemonCard.component';
 import { CardContainer } from 'src/components/cardContainer/cardContainer.component';
 import { PokemonPage } from 'src/components/pokemonPage/pokemonPage.components';
 import { NavBar } from 'src/components/navBar/navBar.component';
+import { navButtons } from 'src/components/navButtons/navButtons.components';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavBar } from 'src/components/navBar/navBar.component';
     // Components
     CardContainer,
     PokemonCard,
-    NavBar
+    NavBar,
+    navButtons
   ],
   imports: [
     BrowserModule,

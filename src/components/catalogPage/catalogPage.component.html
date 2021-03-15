@@ -1,10 +1,4 @@
 <h2>Catalog</h2>
-<div class="nav-buttons">
-  <button *ngIf="previous" (click)="getPrevious()">previous</button>
-  <button *ngIf="next" (click)="getNext()">next</button>
-</div>
+<navButtons [previous]="previous" [next]="next" (navigate)="handleNavigation($event)"></navButtons>
 <cardContainer [pokemons]="pokemons"></cardContainer>
-<div class="nav-buttons">
-  <button *ngIf="previous" (click)="getPrevious()">previous</button>
-  <button *ngIf="next" (click)="getNext()">next</button>
-</div>
+<navButtons [previous]="previous" [next]="next" (navigate)="handleNavigation($event)"></navButtons>

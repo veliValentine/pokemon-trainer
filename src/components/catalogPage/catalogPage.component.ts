@@ -28,11 +28,7 @@ export class CatalogPage {
     this.next = next;
   }
 
-  getNext = () => {
-    this.getPokemons(this.next);
-  }
-
-  getPrevious = () => {
-    this.getPokemons(this.previous);
+  handleNavigation = (path: string): void => {
+    this.getPokemons(path);
   }
 }
