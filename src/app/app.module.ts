@@ -12,17 +12,7 @@ import { PokemonCard } from 'src/components/pokemonCard/pokemonCard.component';
 import { CardContainer } from 'src/components/cardContainer/cardContainer.component';
 import { PokemonPage } from 'src/components/pokemonPage/pokemonPage.components';
 import { NavBar } from 'src/components/navBar/navBar.component';
-/*
-TODO
-Pokemon catalog
-- Pagination ?
-Pokemon
-- collect button (Available for uncollected pokemons)
-StorageService
-- move functionality from storage helper here
-localStorage
-- convert to typescript
-*/
+
 @NgModule({
   declarations: [
     AppComponent,

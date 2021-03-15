@@ -4,6 +4,7 @@ import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
 import { LoginPage } from 'src/components/loginPage/loginPage.component';
 import { PokemonPage } from 'src/components/pokemonPage/pokemonPage.components';
 import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
+import { AuthenticationGuard } from 'src/guards/authentication.guard';
 
 const routes: Routes = [
   {
@@ -12,15 +13,18 @@ const routes: Routes = [
   },
   {
     path: 'trainer',
-    component: TrainerPage
+    component: TrainerPage,
+    canActivate: [ AuthenticationGuard ]
   },
   {
     path: 'pokemons',
-    component: CatalogPage
+    component: CatalogPage,
+    canActivate: [ AuthenticationGuard ]
   },
   {
     path: 'pokemon/:id',
-    component: PokemonPage
+    component: PokemonPage,
+    canActivate: [ AuthenticationGuard ]
   },
   {
     path: '',
