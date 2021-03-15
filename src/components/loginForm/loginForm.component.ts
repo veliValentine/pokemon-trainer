@@ -4,11 +4,11 @@ import { Router } from "@angular/router";
 import { StorageService } from "src/services/storage.service";
 
 @Component({
-  selector: 'loginPage',
-  templateUrl: './loginPage.component.html'
+  selector: 'loginForm',
+  templateUrl: './loginForm.component.html'
 })
 
-export class LoginPage {
+export class LoginForm {
   constructor(private readonly storageService: StorageService, private router: Router) {
   }
   loading: boolean = false;

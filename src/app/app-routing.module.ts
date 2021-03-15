@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
-import { LoginPage } from 'src/components/loginPage/loginPage.component';
+import { LoginForm } from 'src/components/loginForm/loginForm.component';
 import { PokemonPage } from 'src/components/pokemonPage/pokemonPage.components';
 import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
 import { AuthenticationGuard } from 'src/guards/authentication.guard';
@@ -9,7 +9,7 @@ import { AuthenticationGuard } from 'src/guards/authentication.guard';
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginPage
+    component: LoginForm
   },
   {
     path: 'trainer',

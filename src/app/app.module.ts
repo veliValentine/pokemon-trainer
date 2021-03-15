@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPage } from '../components/loginPage/loginPage.component'
+import { LoginForm } from '../components/loginForm/loginForm.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
 import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
@@ -17,11 +17,11 @@ import { navButtons } from 'src/components/navButtons/navButtons.components';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPage,
     TrainerPage,
     CatalogPage,
     PokemonPage,
     // Components
+    LoginForm,
     CardContainer,
     PokemonCard,
     NavBar,
