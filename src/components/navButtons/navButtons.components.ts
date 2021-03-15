@@ -11,7 +11,7 @@ export class navButtons {
   @Input() next: string;
   @Output() navigate = new EventEmitter<string>();
 
-  handleNavigation(value) {
+  handleNavigation(value: string): void {
     this.navigate.emit(value);
   }
 }
