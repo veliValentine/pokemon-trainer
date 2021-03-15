@@ -13,10 +13,8 @@ export class AuthenticationGuard implements CanActivate {
   canActivate(): boolean {
     const trainer = this.storageService.getTrainer();
     if (trainer) {
-      console.log('hi');
       return true;
     }
-    console.log('ho');
     this.router.navigateByUrl('/login')
     return false;
   }
