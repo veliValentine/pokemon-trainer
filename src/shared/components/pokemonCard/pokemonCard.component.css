@@ -1,0 +1,21 @@
+.card {
+  margin: 10px;
+  padding: 3px;
+  background-color: rgb(223, 223, 223);
+}
+
+a {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+img {
+  height: 3cm;
+  width: 3cm;
+}
+
+p {
+  font-weight: bold;
+}

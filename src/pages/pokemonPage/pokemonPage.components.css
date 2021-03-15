@@ -1,0 +1,58 @@
+h1 {
+  text-align: center;
+}
+
+.stats, .moves{
+  background-color: rgb(197, 197, 197);
+  border-radius: 2em;
+  padding: 1em;
+  margin: 1em;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.stats p {
+  font-weight: bold;
+}
+
+.name-image-catch {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.moves {
+  padding: 2em;
+}
+
+.moves h3 {
+  text-align: center;
+}
+
+.moves ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  
+}
+
+.moves li {
+  padding: 1em;
+}
+
+img {
+  height: 10em;
+  width: 10em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

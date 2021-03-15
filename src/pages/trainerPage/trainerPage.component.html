@@ -1,0 +1,13 @@
+<div class="trainerPage">
+  <h2>Hello {{trainer}}!</h2>
+
+  <div *ngIf="haveCollectedPokemons;else noCollectedPokemons">
+    <cardContainer [pokemons]="collectedPokemons"></cardContainer>
+  </div>
+
+  <ng-template #noCollectedPokemons>
+    <div>
+      <p>No collected pokemons. Go and get them all!</p>
+    </div>
+  </ng-template>
+</div>
