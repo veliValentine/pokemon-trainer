@@ -1,10 +1,12 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { Observable } from "rxjs";
-import { map } from 'rxjs/operators'
+import { catchError, map } from 'rxjs/operators'
 import { parsePokemon, parsePokemonBase } from "src/shared/parseResponses";
+import { ERROR } from "src/shared/routerPaths";
 
-import { PokemonBase, Pokemon, PokemonsResponse, } from "../shared/interface";
+import { Pokemon, PokemonsResponse, } from "../shared/interface";
 import { POKEMONS_API_URL, POKEMON_API_URL } from "./serviceHelper";
 
 @Injectable({
@@ -12,7 +14,7 @@ import { POKEMONS_API_URL, POKEMON_API_URL } from "./serviceHelper";
 })
 
 export class PokemonService {
-  constructor(private readonly http: HttpClient) { }
+  constructor(private readonly http: HttpClient, private router: Router) { }
 
   getPokemons(path = POKEMONS_API_URL): Observable<PokemonsResponse> {
     return this.http
@@ -23,6 +25,10 @@ export class PokemonService {
           return {
             next, previous, pokemons
           }
+        }),
+        catchError((error) => {
+          this.router.navigateByUrl(ERROR)
+          throw Error(error);
         })
       )
   }
@@ -31,7 +37,11 @@ export class PokemonService {
     return this.http
       .get<Pokemon>(POKEMON_API_URL(id))
       .pipe(
-        map(parsePokemon)
+        map(parsePokemon),
+        catchError((error) => {
+          this.router.navigateByUrl(ERROR)
+          throw Error(error);
+        })
       )
   }
 }
