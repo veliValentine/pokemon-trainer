@@ -11,6 +11,7 @@ import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
 import { PokemonCard } from 'src/components/pokemonCard/pokemonCard.component';
 import { CardContainer } from 'src/components/cardContainer/cardContainer.component';
 import { PokemonPage } from 'src/components/pokemonPage/pokemonPage.components';
+import { NavBar } from 'src/components/navBar/navBar.component';
 /*
 TODO
 Pokemon catalog
@@ -32,6 +33,7 @@ localStorage
     // Components
     CardContainer,
     PokemonCard,
+    NavBar
   ],
   imports: [
     BrowserModule,
