@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
-import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
-import { PokemonPage } from 'src/components/pokemonPage/pokemonPage.components';
-import { LoginForm } from 'src/components/loginForm/loginForm.component';
+// Pages
+import { TrainerPage } from 'src/pages/trainerPage/trainerPage.component';
+import { CatalogPage } from 'src/pages/catalogPage/catalogPage.component';
+import { PokemonPage } from 'src/pages/pokemonPage/pokemonPage.components';
+import { LoginForm } from 'src/pages/loginForm/loginForm.component';
+// Components
 import { CardContainer } from 'src/shared/components/cardContainer/cardContainer.component';
 import { PokemonCard } from 'src/shared/components/pokemonCard/pokemonCard.component';
 import { NavBar } from 'src/shared/components/navBar/navBar.component';
@@ -16,16 +18,17 @@ import { navButtons } from 'src/shared/components/navButtons/navButtons.componen
 
 @NgModule({
   declarations: [
+    // pages
     AppComponent,
     TrainerPage,
     CatalogPage,
     PokemonPage,
-    // Components
     LoginForm,
+    // Components
     CardContainer,
     PokemonCard,
     NavBar,
-    navButtons
+    navButtons,
   ],
   imports: [
     BrowserModule,

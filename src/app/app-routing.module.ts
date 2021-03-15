@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CatalogPage } from 'src/components/catalogPage/catalogPage.component';
-import { LoginForm } from 'src/components/loginForm/loginForm.component';
-import { PokemonPage } from 'src/components/pokemonPage/pokemonPage.components';
-import { TrainerPage } from 'src/components/trainerPage/trainerPage.component';
+import { CatalogPage } from 'src/pages/catalogPage/catalogPage.component';
+import { LoginForm } from 'src/pages/loginForm/loginForm.component';
+import { PokemonPage } from 'src/pages/pokemonPage/pokemonPage.components';
+import { TrainerPage } from 'src/pages/trainerPage/trainerPage.component';
 import { AuthenticationGuard } from 'src/guards/authentication.guard';
 
 const routes: Routes = [
