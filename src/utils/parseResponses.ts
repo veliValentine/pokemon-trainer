@@ -1,8 +1,8 @@
 import { Pokemon, PokemonBase, ResponseStatType, Stat } from "src/utils/interface"
 import { title } from "src/utils/title";
 
-export const parsePokemonBase = (response: any): PokemonBase[] => (
-  response.results.map(convertToPokemonBase)
+export const parsePokemonBase = (results: []): PokemonBase[] => (
+  results.map(convertToPokemonBase)
 )
 
 const convertToPokemonBase = ({ name, url }: { name: string, url: string }): PokemonBase => (

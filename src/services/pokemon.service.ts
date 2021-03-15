@@ -14,11 +14,16 @@ import { POKEMONS_API_URL, POKEMON_API_URL } from "./serviceHelper";
 export class PokemonService {
   constructor(private readonly http: HttpClient) { }
 
-  getPokemons(): Observable<PokemonBase[]> {
+  getPokemons(path = POKEMONS_API_URL): Observable<{ pokemons: PokemonBase[], next: string, previous: string }> {
     return this.http
-      .get<PokemonBase[]>(POKEMONS_API_URL)
+      .get<PokemonBase[]>(path)
       .pipe(
-        map(parsePokemonBase)
+        map(({ previous, next, results }: any) => {
+          const pokemons = parsePokemonBase(results);
+          return {
+            next, previous, pokemons
+          }
+        })
       )
   }
 
