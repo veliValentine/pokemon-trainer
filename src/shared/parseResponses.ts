@@ -1,5 +1,5 @@
-import { Pokemon, PokemonBase, ResponseStatType, Stat } from "src/utils/interface"
-import { title } from "src/utils/title";
+import { Pokemon, PokemonBase, ResponseStatType, Stat } from "src/shared/interface"
+import { title } from "src/shared/title";
 
 export const parsePokemonBase = (results: []): PokemonBase[] => (
   results.map(convertToPokemonBase)

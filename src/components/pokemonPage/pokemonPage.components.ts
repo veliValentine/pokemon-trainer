@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { PokemonService } from "src/services/pokemon.service";
 import { StorageService } from "src/services/storage.service";
-import { Pokemon, PokemonBase } from "src/utils/interface";
+import { Pokemon, PokemonBase } from "src/shared/interface";
 
 @Component({
   selector: 'pokemonPage',

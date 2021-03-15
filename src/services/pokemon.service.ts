@@ -2,9 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from 'rxjs/operators'
-import { parsePokemon, parsePokemonBase } from "src/utils/parseResponses";
+import { parsePokemon, parsePokemonBase } from "src/shared/parseResponses";
 
-import { PokemonBase, Pokemon, PokemonsResponse, } from "../utils/interface";
+import { PokemonBase, Pokemon, PokemonsResponse, } from "../shared/interface";
 import { POKEMONS_API_URL, POKEMON_API_URL } from "./serviceHelper";
 
 @Injectable({

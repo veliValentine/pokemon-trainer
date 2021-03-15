@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { PokemonService } from "src/services/pokemon.service";
-import { PokemonBase, PokemonsResponse } from "src/utils/interface";
+import { PokemonBase, PokemonsResponse } from "src/shared/interface";
 
 @Component({
   selector: 'catalogPage',

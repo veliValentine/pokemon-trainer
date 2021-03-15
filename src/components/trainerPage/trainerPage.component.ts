@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { StorageService } from "src/services/storage.service";
-import { PokemonBase } from '../../utils/interface'
+import { PokemonBase } from '../../shared/interface'
 
 @Component({
   selector: 'trainerPage',
