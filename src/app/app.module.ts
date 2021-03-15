@@ -10,6 +10,7 @@ import { TrainerPage } from 'src/pages/trainerPage/trainerPage.component';
 import { CatalogPage } from 'src/pages/catalogPage/catalogPage.component';
 import { PokemonPage } from 'src/pages/pokemonPage/pokemonPage.components';
 import { LoginForm } from 'src/pages/loginForm/loginForm.component';
+import { ErrorPage } from 'src/pages/errorPage/errorPage.component';
 // Components
 import { CardContainer } from 'src/shared/components/cardContainer/cardContainer.component';
 import { PokemonCard } from 'src/shared/components/pokemonCard/pokemonCard.component';
@@ -24,6 +25,7 @@ import { navButtons } from 'src/shared/components/navButtons/navButtons.componen
     CatalogPage,
     PokemonPage,
     LoginForm,
+    ErrorPage,
     // Components
     CardContainer,
     PokemonCard,

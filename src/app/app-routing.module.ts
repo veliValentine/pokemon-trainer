@@ -5,6 +5,7 @@ import { LoginForm } from 'src/pages/loginForm/loginForm.component';
 import { PokemonPage } from 'src/pages/pokemonPage/pokemonPage.components';
 import { TrainerPage } from 'src/pages/trainerPage/trainerPage.component';
 import { AuthenticationGuard } from 'src/guards/authentication.guard';
+import { ErrorPage } from 'src/pages/errorPage/errorPage.component';
 
 const routes: Routes = [
   {
@@ -30,11 +31,11 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: '/pokemons'
-  }/*,
+  },
   {
     path: '**',
-    component: 'ErrorPage'
-  }*/
+    component: ErrorPage
+  }
 ];
 
 @NgModule({
