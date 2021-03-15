@@ -9,6 +9,10 @@
 h2 {
   color: white;
 }
+p {
+  margin-left: 1em;
+  margin-right: 1em;
+}
 a {
   color: rgb(250, 250, 250);
   font-weight: 'bold';
