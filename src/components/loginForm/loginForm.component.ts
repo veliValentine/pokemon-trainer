@@ -5,7 +5,8 @@ import { StorageService } from "src/services/storage.service";
 
 @Component({
   selector: 'loginForm',
-  templateUrl: './loginForm.component.html'
+  templateUrl: './loginForm.component.html',
+  styleUrls: ['./loginForm.component.css']
 })
 
 export class LoginForm {

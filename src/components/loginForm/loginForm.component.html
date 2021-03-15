@@ -1,29 +1,24 @@
 <form [formGroup]="loginForm">
-  <label for="trainer-name">
-    Enter name:
-  </label>
-  <input
-    id="trainer-name"
-    name="trainer-name"
-    formControlName="trainerName"
-    type="text"
-    placeholder="trainer name"
-    required
-    minlength="2"
-  />
-  <div *ngIf="trainerName.invalid && (trainerName.dirty || trainerName.touched)">
-    <p *ngIf="trainerName.errors.required">
-      Name is required
-    </p>
-    <p *ngIf="trainerName.errors.minlength">
-      Min length 2
-    </p>
+  <div class="input">
+    <label for="trainer-name">
+      Enter name:
+    </label>
+    <input id="trainer-name" name="trainer-name" formControlName="trainerName" type="text" placeholder="trainer name"
+      required minlength="2" />
   </div>
-  <button
-    [disabled]="loginForm.invalid || loading"
-    type="button"
-    (click)="onClick()"
-  >
-    continue!
-  </button>
+  <div class="error">
+    <div *ngIf="trainerName.invalid && (trainerName.dirty || trainerName.touched)">
+      <p *ngIf="trainerName.errors.required">
+        Name is required!
+      </p>
+      <p *ngIf="trainerName.errors.minlength">
+        Min length 2!
+      </p>
+    </div>
+  </div>
+  <div class="button">
+    <button [disabled]="loginForm.invalid || loading" type="button" (click)="onClick()">
+      continue!
+    </button>
+  </div>
 </form>
