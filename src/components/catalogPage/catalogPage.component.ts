@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { PokemonService } from "src/services/pokemon.service";
+import { PokemonBase, PokemonsResponse } from "src/utils/interface";
 
 @Component({
   selector: 'catalogPage',
@@ -8,11 +9,30 @@ import { PokemonService } from "src/services/pokemon.service";
 })
 
 export class CatalogPage {
-  pokemons = [];
+  pokemons: PokemonBase[] = [];
+  previous: string = null;
+  next: string = null;
+
   constructor(private readonly pokemonService: PokemonService) {
-    this.pokemonService.getPokemons()
-      .subscribe(response => {
-        this.pokemons = response
-      })
+    this.getPokemons();
+  }
+
+  getPokemons = (path: string = undefined): void => {
+    this.pokemonService.getPokemons(path)
+      .subscribe(this.setValues)
+  }
+
+  setValues = ({ pokemons, previous, next }: PokemonsResponse): void => {
+    this.pokemons = pokemons;
+    this.previous = previous;
+    this.next = next;
+  }
+
+  getNext = () => {
+    this.getPokemons(this.next);
+  }
+
+  getPrevious = () => {
+    this.getPokemons(this.previous);
   }
 }
