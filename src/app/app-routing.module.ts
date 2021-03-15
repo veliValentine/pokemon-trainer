@@ -21,7 +21,16 @@ const routes: Routes = [
   {
     path: 'pokemon/:id',
     component: PokemonPage
-  }
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/pokemons'
+  }/*,
+  {
+    path: '**',
+    component: 'ErrorPage'
+  }*/
 ];
 
 @NgModule({

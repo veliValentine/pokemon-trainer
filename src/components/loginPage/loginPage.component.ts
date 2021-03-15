@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { AbstractControl, FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { StorageService } from "src/services/storage.service";
 
 @Component({
@@ -8,7 +9,7 @@ import { StorageService } from "src/services/storage.service";
 })
 
 export class LoginPage {
-  constructor(private readonly storageService: StorageService) {
+  constructor(private readonly storageService: StorageService, private router: Router) {
   }
   loading: boolean = false;
   loginForm: FormGroup = new FormGroup({
@@ -23,11 +24,8 @@ export class LoginPage {
   onClick() {
     this.loading = true;
     const userName: string = this.loginForm.value.trainerName
-    console.log('click!', userName);
     this.storageService.saveTrainer(userName);
-    setTimeout(() => {
-      console.log('ADD REDIRECT');
-      this.loading = false;
-    }, 500);
+    this.router.navigateByUrl('/pokemons')
+    this.loading = false;
   }
 }
