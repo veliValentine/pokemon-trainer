@@ -23,6 +23,10 @@ const routes: Routes = [
     canActivate: [ AuthenticationGuard ]
   },
   {
+    path: 'error',
+    component: ErrorPage
+  },
+  {
     path: 'pokemon/:id',
     component: PokemonPage,
     canActivate: [ AuthenticationGuard ]
@@ -34,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: ErrorPage
+    redirectTo: '/error'
   }
 ];
 

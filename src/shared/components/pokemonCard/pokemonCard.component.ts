@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { POKEMON } from "src/shared/routerPaths";
 import { PokemonBase } from '../../interface'
 
 @Component({
@@ -8,5 +9,6 @@ import { PokemonBase } from '../../interface'
 })
 
 export class PokemonCard {
+  POKEMON = POKEMON
   @Input() pokemon: PokemonBase;
 }

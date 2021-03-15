@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { StorageService } from "src/services/storage.service";
+import { POKEMONS, TRAINER } from "src/shared/routerPaths";
 
 @Component({
   selector: 'navBar',
@@ -8,4 +8,6 @@ import { StorageService } from "src/services/storage.service";
 })
 
 export class NavBar {
+  POKEMONS = POKEMONS;
+  TRAINER = TRAINER
 }
