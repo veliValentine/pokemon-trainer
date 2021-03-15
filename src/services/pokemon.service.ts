@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { map } from 'rxjs/operators'
 import { parsePokemon, parsePokemonBase } from "src/utils/parseResponses";
 
-import { PokemonBase, Pokemon, } from "../utils/interface";
+import { PokemonBase, Pokemon, PokemonsResponse, } from "../utils/interface";
 import { POKEMONS_API_URL, POKEMON_API_URL } from "./serviceHelper";
 
 @Injectable({
@@ -14,9 +14,9 @@ import { POKEMONS_API_URL, POKEMON_API_URL } from "./serviceHelper";
 export class PokemonService {
   constructor(private readonly http: HttpClient) { }
 
-  getPokemons(path = POKEMONS_API_URL): Observable<{ pokemons: PokemonBase[], next: string, previous: string }> {
+  getPokemons(path = POKEMONS_API_URL): Observable<PokemonsResponse> {
     return this.http
-      .get<PokemonBase[]>(path)
+      .get<PokemonsResponse>(path)
       .pipe(
         map(({ previous, next, results }: any) => {
           const pokemons = parsePokemonBase(results);

@@ -1,3 +1,9 @@
+export interface PokemonsResponse {
+  pokemons: PokemonBase[],
+  previous: string,
+  next: string,
+}
+
 export interface PokemonBase {
   id: number,
   name: string,
