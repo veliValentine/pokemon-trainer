@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { PokemonService } from "src/services/pokemon.service";
-import { Pokemon } from "src/utils/interface";
+import { StorageService } from "src/services/storage.service";
+import { Pokemon, PokemonBase } from "src/utils/interface";
 
 @Component({
   selector: 'pokemonPage',
@@ -12,16 +13,31 @@ import { Pokemon } from "src/utils/interface";
 export class PokemonPage {
   loading = true;
   pokemon: Pokemon;
-  private readonly pokemonID: number;
+  owned: boolean = false;
 
-  constructor(private route: ActivatedRoute, private readonly pokemonService: PokemonService) {
-    this.pokemonID = Number(this.route.snapshot.paramMap.get('id'))
+  constructor(
+    private route: ActivatedRoute,
+    private readonly pokemonService: PokemonService,
+    private readonly storageService: StorageService,
+  ) {
+    const pokemonID = Number(this.route.snapshot.paramMap.get('id'))
     pokemonService
-      .getPokemon(this.pokemonID)
+      .getPokemon(pokemonID)
       .subscribe(response => {
         this.pokemon = response;
         this.loading = false;
-        console.log(this.pokemon);
       });
+    this.owned = storageService.getPokemons()
+      .map((pokemon: PokemonBase) => pokemon.id)
+      .includes(pokemonID)
+  }
+
+  catch() {
+    const catcedPokemon: PokemonBase = {
+      id: this.pokemon.id,
+      name: this.pokemon.name,
+    }
+    this.storageService.addPokemon(catcedPokemon);
+    this.owned = true;
   }
 }

@@ -16,6 +16,10 @@ h1 {
   justify-content: space-around;
 }
 
+.stats p {
+  font-weight: bold;
+}
+
 .name-image-catch {
   text-align: center;
   display: flex;
